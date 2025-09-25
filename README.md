@@ -1,5 +1,5 @@
 # Implementation Version Notes
-Table of Contents:
+## Table of Contents
 - [Umamusume: Pretty Derby](#umamusume-pretty-derby)
 
 ## Umamusume: Pretty Derby
