@@ -5,7 +5,7 @@ from typing import List, Dict, Set
 
 from dataclasses import dataclass
 
-from Options import Toggle, OptionList
+from Options import DefaultOnToggle, Toggle, OptionList
 
 from ..game import Game
 from ..game_objective_template import GameObjectiveTemplate
@@ -364,21 +364,21 @@ class UmamusumePrettyDerbyTraineesOwned(OptionList):
         "Winning Ticket",
     ]
 
-class UmamusumePrettyDerbyIncludeG1(Toggle):
+class UmamusumePrettyDerbyIncludeG1(DefaultOnToggle):
     """
     Indicates whether to include G1 Races when generating Umamusume: Pretty Derby objectives.
     """
 
     display_name = "Umamusume: Pretty Derby Include G1 Races"
 
-class UmamusumePrettyDerbyIncludeG2(Toggle):
+class UmamusumePrettyDerbyIncludeG2(DefaultOnToggle):
     """
     Indicates whether to include G2 Races when generating Umamusume: Pretty Derby objectives.
     """
 
     display_name = "Umamusume: Pretty Derby Include G2 Races"
 
-class UmamusumePrettyDerbyIncludeG3(Toggle):
+class UmamusumePrettyDerbyIncludeG3(DefaultOnToggle):
     """
     Indicates whether to include G3 Races when generating Umamusume: Pretty Derby objectives.
     """
@@ -397,3 +397,4 @@ class UmamusumePrettyDerbyIncludeEX(Toggle):
     """
 
     display_name = "Umamusume: Pretty Derby Include EX Races"
+
