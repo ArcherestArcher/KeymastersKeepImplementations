@@ -1,7 +1,7 @@
 # Implementation Version Notes
+A Suggestion Box for ways to further improve my implementations can be found [here](https://forms.gle/2snk4TbiB8VC9V967).
 ## Table of Contents
 - [Umamusume: Pretty Derby](#umamusume-pretty-derby)
-
 ## Umamusume: Pretty Derby
 - v1.1.0 (25/09/25 11:15 UTC)
   - Updated default setting to True for including G1, G2, and G3 races.
