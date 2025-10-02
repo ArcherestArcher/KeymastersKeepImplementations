@@ -330,6 +330,7 @@ class UmamusumePrettyDerbyTraineesOwned(OptionList):
         "Daiwa Scarlet",
         "El Condor Pasa (Normal)",
         "El Condor Pasa (Fantasy)",
+        "Fuji Kiseki",
         "Gold Ship",
         "Grass Wonder (Normal)",
         "Grass Wonder (Fantasy)",
@@ -397,4 +398,5 @@ class UmamusumePrettyDerbyIncludeEX(Toggle):
     """
 
     display_name = "Umamusume: Pretty Derby Include EX Races"
+
 
