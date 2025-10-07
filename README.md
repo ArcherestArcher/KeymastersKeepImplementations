@@ -3,7 +3,9 @@ A Suggestion Box for ways to further improve my implementations can be found [he
 ## Table of Contents
 - [Umamusume: Pretty Derby](#umamusume-pretty-derby)
 ## Umamusume: Pretty Derby
-- v1.1.1 - Current Version (02/10/25 22:25 UTC)
+- v1.1.2 - Current Version (07/10/25 22:34 UTC)
+  - Added Gold City to default trainee list, due to her addition to Global.
+- v1.1.1 (02/10/25 22:25 UTC)
   - Added Fuji Kiseki to default trainee list, due to her addition to Global.
 - v1.1.0 (25/09/25 11:15 UTC)
   - Updated default setting to True for including G1, G2, and G3 races.
