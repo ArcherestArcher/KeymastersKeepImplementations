@@ -338,7 +338,8 @@ class UmamusumePrettyDerbyTraineesOwned(OptionList):
         "Haru Urara",
         "Hishi Amazon",
         "King Halo",
-        "Maruzensky",
+        "Maruzensky (Normal)",
+        "Maruzensky (Summer)",
         "Matikanefukukitaru",
         "Mayano Top Gun (Normal)",
         "Mayano Top Gun (Wedding)",
@@ -355,7 +356,8 @@ class UmamusumePrettyDerbyTraineesOwned(OptionList):
         "Seiun Sky",
         "Silence Suzuka",
         "Smart Falcon",
-        "Special Week",
+        "Special Week (Normal)",
+        "Special Week (Summer)",
         "Super Creek",
         "Symboli Rudolf",
         "Taiki Shuttle",
@@ -399,6 +401,7 @@ class UmamusumePrettyDerbyIncludeEX(Toggle):
     """
 
     display_name = "Umamusume: Pretty Derby Include EX Races"
+
 
 
 
