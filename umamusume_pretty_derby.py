@@ -245,7 +245,7 @@ class UmamusumePrettyDerbyGame(Game):
 
             "Aichi Hai",
             "Kyoto Kimpai",
-            "Nakayama Kimapi",
+            "Nakayama Kimpai",
             "Negishi Stakes",
             "Silk Road Stakes",
             "Tokyo Shimbun Hai",
@@ -401,6 +401,7 @@ class UmamusumePrettyDerbyIncludeEX(Toggle):
     """
 
     display_name = "Umamusume: Pretty Derby Include EX Races"
+
 
 
 
