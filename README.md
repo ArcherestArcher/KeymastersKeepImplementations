@@ -3,7 +3,9 @@ A Suggestion Box for ways to further improve my implementations can be found [he
 ## Table of Contents
 - [Umamusume: Pretty Derby](#umamusume-pretty-derby)
 ## Umamusume: Pretty Derby
-- v1.1.3 - Current Version (14/10/25 22:20 UTC)
+- v1.1.4 - Current Version (21/10/25 16:13 UTC)
+  - Fixed the typo of Nakayama Kimpai being spelt as "Nakayama Kimapi".
+- v1.1.3 (14/10/25 22:20 UTC)
   - Added the Summer variants of Special Week and Maruzensky to default trainee list.
   - Added "(Normal)" after the default variants of these Umas.
 - v1.1.2 (07/10/25 22:34 UTC)
