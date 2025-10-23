@@ -343,6 +343,7 @@ class UmamusumePrettyDerbyTraineesOwned(OptionList):
         "Matikanefukukitaru",
         "Mayano Top Gun (Normal)",
         "Mayano Top Gun (Wedding)",
+        "Meisho Doto",
         "Mejiro McQueen (Normal)",
         "Mejiro McQueen (Anime Collab)",
         "Mejiro Ryan",
@@ -401,8 +402,3 @@ class UmamusumePrettyDerbyIncludeEX(Toggle):
     """
 
     display_name = "Umamusume: Pretty Derby Include EX Races"
-
-
-
-
-
