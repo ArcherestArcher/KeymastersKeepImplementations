@@ -328,6 +328,7 @@ class UmamusumePrettyDerbyTraineesOwned(OptionList):
         "Biwa Hayahide",
         "Curren Chan",
         "Daiwa Scarlet",
+        "Eishin Flash",
         "El Condor Pasa (Normal)",
         "El Condor Pasa (Fantasy)",
         "Fuji Kiseki",
