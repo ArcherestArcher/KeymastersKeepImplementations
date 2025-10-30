@@ -3,7 +3,9 @@ A Suggestion Box for ways to further improve my implementations can be found [he
 ## Table of Contents
 - [Umamusume: Pretty Derby](#umamusume-pretty-derby)
 ## Umamusume: Pretty Derby
-- v1.1.5 - Current Version (23/10/25 14:45 UTC)
+- v1.1.6 - Current Version (30/10/25 23:21 UTC)
+  - Added Eishin Flash to default trainee list, due to her addition to Global.
+- v1.1.5 (23/10/25 14:45 UTC)
   - Added Meisho Doto to default trainee list, due to her addition to Global a few days ago.
   - Removed the weird extra blank lines at the end that kept being added with each previous change - not sure why github's been doing that.
 - v1.1.4 (21/10/25 16:13 UTC)
