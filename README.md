@@ -3,7 +3,10 @@ A Suggestion Box for ways to further improve my implementations can be found [he
 ## Table of Contents
 - [Umamusume: Pretty Derby](#umamusume-pretty-derby)
 ## Umamusume: Pretty Derby
-- v1.1.6 - Current Version (30/10/25 23:21 UTC)
+- v1.1.7 - Current Version (06/11/25 22:09 UTC)
+  - Added new Matikanefukukitaru outfit to default trainee list.
+  - Called it Full Armour because that's what gametora seems to be calling it. Not sure why it's called that.
+- v1.1.6 (30/10/25 23:21 UTC)
   - Added Eishin Flash to default trainee list, due to her addition to Global.
 - v1.1.5 (23/10/25 14:45 UTC)
   - Added Meisho Doto to default trainee list, due to her addition to Global a few days ago.
