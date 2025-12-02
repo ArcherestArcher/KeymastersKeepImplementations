@@ -3,7 +3,19 @@ A Suggestion Box for ways to further improve my implementations can be found [he
 ## Table of Contents
 - [Umamusume: Pretty Derby](#umamusume-pretty-derby)
 ## Umamusume: Pretty Derby
-- v1.1.7 - Current Version (06/11/25 22:09 UTC)
+- v2.0.0 - Current Version (02/12/25 23:51 UTC)
+  - Added the following umas that I was behind on to the default trainee list:
+    - Agnes Digital
+    - Hishi Akebono
+    - Kawakami Princess
+    - The Halloween Outfits for Rice Shower and Super Creek
+  - Renamed option for including EX Races to change it to reflect that it's just an option for including URA Finale.
+  - Split the main objectives so as to mark challenges with the URA Finale as difficult.
+  - Added an option for including Unity Cup.
+  - Added unique challenges more suited to how Unity Cup functions, to pair with the added option.
+  - Added option to include trainee-specific challenges (which, to avoid issues, removes the specific trainee optional constraint when on).
+  - Added a few changes to option descriptions.
+- v1.1.7 (06/11/25 22:09 UTC)
   - Added new Matikanefukukitaru outfit to default trainee list.
   - Called it Full Armour because that's what gametora seems to be calling it. Not sure why it's called that.
 - v1.1.6 (30/10/25 23:21 UTC)
