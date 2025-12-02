@@ -15,10 +15,12 @@ from ..enums import KeymastersKeepGamePlatforms
 @dataclass
 class UmamusumePrettyDerbyArchipelagoOptions:
     umamusume_pretty_derby_trainees_owned: UmamusumePrettyDerbyTraineesOwned
+    umamusume_pretty_derby_include_trainee_challenges: UmamusumePrettyDerbyIncludeTraineeChallenges
     umamusume_pretty_derby_include_g1: UmamusumePrettyDerbyIncludeG1
     umamusume_pretty_derby_include_g2: UmamusumePrettyDerbyIncludeG2
     umamusume_pretty_derby_include_g3: UmamusumePrettyDerbyIncludeG3
-    umamusume_pretty_derby_include_ex: UmamusumePrettyDerbyIncludeEX
+    umamusume_pretty_derby_include_ura_finale: UmamusumePrettyDerbyIncludeURAFinale
+    umamusume_pretty_derby_include_unity_cup: UmamusumePrettyDerbyIncludeUnityCup
 
 class UmamusumePrettyDerbyGame(Game):
     name = "Umamusume: Pretty Derby"
@@ -36,12 +38,6 @@ class UmamusumePrettyDerbyGame(Game):
     def optional_game_constraint_templates(self) -> List[GameObjectiveTemplate]:
         return [
             GameObjectiveTemplate(
-                label="Use TRAINEE to complete these goals, if that is possible",
-                data={
-                    "TRAINEE": (self.trainees, 1),
-                },
-            ),
-            GameObjectiveTemplate(
                 label="Complete these goals whilst only training STAT, if that is possible",
                 data={
                     "STAT": (self.stats, 1),
@@ -53,6 +49,16 @@ class UmamusumePrettyDerbyGame(Game):
                 },
             ),
         ]
+        
+        if self.include_trainee_constraints:
+            objectives.append(
+                GameObjectiveTemplate(
+                    label="Use TRAINEE to complete these goals, if that is possible",
+                    data={
+                        "TRAINEE": (self.trainees, 1),
+                    },
+                ),
+            )
 
     def game_objective_templates(self) -> List[GameObjectiveTemplate]:
         return [
@@ -102,13 +108,128 @@ class UmamusumePrettyDerbyGame(Game):
                 weight=1,
             ),
         ]
+        
+        if self.include_ura_finale:
+            objectives.append(
+                GameObjectiveTemplate(
+                    label="Win 1st in RACE within Career Mode",
+                    data={
+                        "RACE": (self.races_ura_finale,1),
+                    },
+                    is_time_consuming=False,
+                    is_difficult=True,
+                    weight=1,
+                ),
+            )
+        
+        if self.include_unity_cup:
+            objectives.append(
+                GameObjectiveTemplate(
+                    label="Win against the strongest team available in ROUND",
+                    data={
+                        "ROUND": (self.rounds_unity_cup,1),
+                    },
+                    is_time_consuming=False,
+                    is_difficult=True,
+                    weight=1,
+                ),
+                GameObjectiveTemplate(
+                    label="Win or Draw against the strongest team available in ROUND",
+                    data={
+                        "ROUND": (self.rounds_unity_cup,1),
+                    },
+                    is_time_consuming=False,
+                    is_difficult=False,
+                    weight=1,
+                ),
+                GameObjectiveTemplate(
+                    label="Win against the middle team available in ROUND",
+                    data={
+                        "ROUND": (self.rounds_unity_cup,1),
+                    },
+                    is_time_consuming=False,
+                    is_difficult=False,
+                    weight=1,
+                ),
+                GameObjectiveTemplate(
+                    label="Win or Draw against the middle team available in ROUND",
+                    data={
+                        "ROUND": (self.rounds_unity_cup,1),
+                    },
+                    is_time_consuming=False,
+                    is_difficult=False,
+                    weight=1,
+                ),
+                GameObjectiveTemplate(
+                    label="Win against the weakest team available in ROUND",
+                    data={
+                        "ROUND": (self.rounds_unity_cup,1),
+                    },
+                    is_time_consuming=False,
+                    is_difficult=False,
+                    weight=1,
+                ),
+                GameObjectiveTemplate(
+                    label="Win or Draw against the weakest team available in ROUND",
+                    data={
+                        "ROUND": (self.rounds_unity_cup,1),
+                    },
+                    is_time_consuming=False,
+                    is_difficult=False,
+                    weight=1,
+                ),
+                GameObjectiveTemplate(
+                    label="Win against Team Zenith at the end of the Unity Cup.",
+                    data={
+                    },
+                    is_time_consuming=False,
+                    is_difficult=True,
+                    weight=1,
+                ),
+            )
+            
+            if self.include_ura_finale:
+                objectives.append(
+                    GameObjectiveTemplate(
+                        label="Win against Little Cocon or Bitter Glasse in the URA Finale",
+                        data={
+                        },
+                        is_time_consuming=True,
+                        is_difficult=True,
+                        weight=1,
+                    ),
+                )
+        
+        if self.include_trainee_challenges:
+            objectives.append(
+                GameObjectiveTemplate(
+                    label="Get the Good Ending in the SCENARIO scenario with TRAINEE",
+                    data={
+                        "SCENARIO": (self.scenarios,1),
+                        "TRAINEE": (self.trainees,1),
+                    },
+                    is_time_consuming=False,
+                    is_difficult=False,
+                    weight=1,
+                ),
+                GameObjectiveTemplate(
+                    label="Get the unique epithet for TRAINEE",
+                    data={
+                        "SCENARIO": (self.scenarios,1),
+                        "TRAINEE": (self.trainees,1),
+                    },
+                    is_time_consuming=True,
+                    is_difficult=True,
+                    weight=1,
+                ),
+            )
 
     @functools.cached_property
     def races_base(self) -> List[str]:
         return [
             "Junior Make Debut",
         ]
-
+    
     @property
     def include_g1(self) -> bool:
         return bool(self.archipelago_options.umamusume_pretty_derby_include_g1.value)
@@ -264,11 +385,11 @@ class UmamusumePrettyDerbyGame(Game):
         ]
 
     @property
-    def include_ex(self) -> bool:
-        return bool(self.archipelago_options.umamusume_pretty_derby_include_ex.value)
+    def include_ura_finale(self) -> bool:
+        return bool(self.archipelago_options.umamusume_pretty_derby_include_ura_finale.value)
 
     @functools.cached_property
-    def races_ex(self) -> List[str]:
+    def races_ura_finale(self) -> List[str]:
         return [
             "Ura Finals Final (Dirt)",
             "Ura Finals Final (Sprint)",
@@ -292,11 +413,20 @@ class UmamusumePrettyDerbyGame(Game):
         if self.include_g3:
             races.extend(self.races_g3[:])
 
-        # Check if EX races are included, and include them if so
-        if self.include_ex:
-            races.extend(self.races_ex[:])
-
         return races
+    
+    @property
+    def include_unity_cup(self) -> bool:
+        return bool(self.archipelago_options.umamusume_pretty_derby_include_unity_cup.value)
+    
+    @staticmethod
+    def rounds_unity_cup() -> List[str]:
+        return [
+            "Unity Cup Round 1 (December Junior Year)",
+            "Unity Cup Round 2 (June Classic Year)",
+            "Unity Cup Round 3 (December Classic Year)",
+            "Unity Cup Round 4 (June Senior Year)",
+        ]
 
     @staticmethod
     def stats() -> List[str]:
@@ -312,16 +442,41 @@ class UmamusumePrettyDerbyGame(Game):
         trainees: List[str] = list(self.archipelago_options.umamusume_pretty_derby_trainees_owned.value)
         return sorted(trainees)
 
+    @property
+    def include_trainee_challenges(self) -> bool:
+        return bool(self.archipelago_options.umamusume_pretty_derby_include_trainee_challenges.value)
+    
+    @property
+    # I was paranoid about the "== False" working or not, so did this because it felt safer.
+    def include_trainee_constraints(self) -> bool:
+        if self.include_trainee_challenges:
+            return False
+        else:
+            return True
+    
+    @staticmethod
+    def scenarios() -> List[str]:
+        return [
+            "URA Finale",
+            "Unity Cup",
+        ]
+
 # Archipelago Options
 class UmamusumePrettyDerbyTraineesOwned(OptionList):
     """
     Indicates which trainees the player owns in Umamusume: Pretty Derby.
     
-    Note: Currently this is only used for generating optional restrictions, and not for any specific main objectives.
+    If trainee challenges are on, these are the trainees that will be used for those objectives.
+    If trainee challenges are off, these trainees instead will be used for one of the potential optional constraints.
+    
+    This list was made as an OptionList, meaning that you can add any text you want here without issue.
+    As such, you can duplicate trainee names if you want to increase their odds of showing up,
+    or if the current list isn't up to date, you can update it yourself with no game errors.
     """
 
     display_name = "Umamusume: Pretty Derby Trainees Owned"
     default  = [
+        "Agnes Digital",
         "Agnes Tachyon",
         "Air Groove (Normal)",
         "Air Groove (Wedding)",
@@ -337,7 +492,9 @@ class UmamusumePrettyDerbyTraineesOwned(OptionList):
         "Grass Wonder (Normal)",
         "Grass Wonder (Fantasy)",
         "Haru Urara",
+        "Hishi Akebono",
         "Hishi Amazon",
+        "Kawakami Princess",
         "King Halo",
         "Maruzensky (Normal)",
         "Maruzensky (Summer)",
@@ -354,14 +511,16 @@ class UmamusumePrettyDerbyTraineesOwned(OptionList):
         "Narita Taishin",
         "Nice Nature",
         "Oguri Cap",
-        "Rice Shower",
+        "Rice Shower (Normal)",
+        "Rice Shower (Halloween)",
         "Sakura Bakushin O",
         "Seiun Sky",
         "Silence Suzuka",
         "Smart Falcon",
         "Special Week (Normal)",
         "Special Week (Summer)",
-        "Super Creek",
+        "Super Creek (Normal)",
+        "Super Creek (Halloween)",
         "Symboli Rudolf",
         "Taiki Shuttle",
         "TM Opera O",
@@ -370,6 +529,13 @@ class UmamusumePrettyDerbyTraineesOwned(OptionList):
         "Vodka",
         "Winning Ticket",
     ]
+
+class UmamusumePrettyDerbyIncludeTraineeChallenges(DefaultOnToggle):
+    """
+    Indicates whether to include more Trainee focused challenges when generating Umamusume: Pretty Derby objectives.
+    """
+
+    display_name = "Umamusume: Pretty Derby Include Trainee Challenges"
 
 class UmamusumePrettyDerbyIncludeG1(DefaultOnToggle):
     """
@@ -392,15 +558,24 @@ class UmamusumePrettyDerbyIncludeG3(DefaultOnToggle):
 
     display_name = "Umamusume: Pretty Derby Include G3 Races"
 
-class UmamusumePrettyDerbyIncludeEX(Toggle):
+class UmamusumePrettyDerbyIncludeURAFinale(Toggle):
     """
-    Indicates whether to include EX Races when generating Umamusume: Pretty Derby objectives.
-    
-    Note: Currently, this means the five variations of the URA Finale Final.
+    Indicates whether to include objectives to win any of the five variations of the URA Finale Final.
     
     Since which variation you get is determined by what race type you raced the most in a run,
     with ties going to the shorter distance - please only include if you're willing to plan to
-    both run and potentially have to win URA Finale (Long), since that one strictly requires planning.
+    both run and win URA Finale (Long), since that one strictly requires planning.
     """
 
-    display_name = "Umamusume: Pretty Derby Include EX Races"
+    display_name = "Umamusume: Pretty Derby Include URA Finale"
+
+class UmamusumePrettyDerbyIncludeUnityCup(Toggle):
+    """
+    Indicates whether to include objectives involving the Unity Cup races from the Unity Cup scenario.
+    
+    Beating Team Zenith is one of the objectives.
+    If URA Finale is also set to included, one of the possible objectives is beating Little Cocon or Bitter Glasse there.
+    These are set as difficult challenges, and for good reason. Be warned.
+    """
+    
+    display_name = "Umamusume: Pretty Derby Include Unity Cup"
