@@ -1,7 +1,17 @@
 # Implementation Version Notes
 A Suggestion Box for ways to further improve my implementations can be found [here](https://forms.gle/2snk4TbiB8VC9V967).
 ## Table of Contents
+- [Bloons TD 6](#bloons-td-6)
 - [Umamusume: Pretty Derby](#umamusume-pretty-derby)
+## Bloons TD 6
+- v1.0.0 - Inital & Current Version (04/12/25 19:45 UTC)
+  - Options to include or disclude the different map groups and difficulty modes.
+  - Options to include boss bloon challenges.
+  - Tasks are to clear maps on different modes, or to clear certain tiers of boss bloons on specific maps.
+  - Optional restrictions are copied from the implementation in SerpantAI's archive:
+    - Not using heroes
+    - Not using tier 5 upgrades
+    - Disabling all Monkey Knowledge
 ## Umamusume: Pretty Derby
 - v2.0.1 - Current Version (04/12/25 15:25 UTC)
   - Turns out I coded it wrong, so any objectives based on options weren't appearing at all.
