@@ -36,7 +36,7 @@ class UmamusumePrettyDerbyGame(Game):
     options_cls = UmamusumePrettyDerbyArchipelagoOptions
 
     def optional_game_constraint_templates(self) -> List[GameObjectiveTemplate]:
-        return [
+        objectives: List[GameObjectiveTemplate] = [
             GameObjectiveTemplate(
                 label="Complete these goals whilst only training STAT, if that is possible",
                 data={
@@ -59,9 +59,11 @@ class UmamusumePrettyDerbyGame(Game):
                     },
                 ),
             )
+        
+        return objectives
 
     def game_objective_templates(self) -> List[GameObjectiveTemplate]:
-        return [
+        objectives: List[GameObjectiveTemplate] = [
             GameObjectiveTemplate(
                 label="Win 1st in RACE within Career Mode",
                 data={
@@ -119,11 +121,11 @@ class UmamusumePrettyDerbyGame(Game):
                     is_time_consuming=False,
                     is_difficult=True,
                     weight=1,
-                ),
+                )
             )
         
         if self.include_unity_cup:
-            objectives.append(
+            objectives.extend([
                 GameObjectiveTemplate(
                     label="Win against the strongest team available in ROUND",
                     data={
@@ -186,7 +188,7 @@ class UmamusumePrettyDerbyGame(Game):
                     is_difficult=True,
                     weight=1,
                 ),
-            )
+            ])
             
             if self.include_ura_finale:
                 objectives.append(
@@ -197,11 +199,11 @@ class UmamusumePrettyDerbyGame(Game):
                         is_time_consuming=True,
                         is_difficult=True,
                         weight=1,
-                    ),
+                    )
                 )
         
         if self.include_trainee_challenges:
-            objectives.append(
+            objectives.extend([
                 GameObjectiveTemplate(
                     label="Get the Good Ending in the SCENARIO scenario with TRAINEE",
                     data={
@@ -222,7 +224,9 @@ class UmamusumePrettyDerbyGame(Game):
                     is_difficult=True,
                     weight=1,
                 ),
-            )
+            ])
+        
+        return objectives
 
     @functools.cached_property
     def races_base(self) -> List[str]:
@@ -579,3 +583,4 @@ class UmamusumePrettyDerbyIncludeUnityCup(Toggle):
     """
     
     display_name = "Umamusume: Pretty Derby Include Unity Cup"
+
