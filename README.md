@@ -3,7 +3,10 @@ A Suggestion Box for ways to further improve my implementations can be found [he
 ## Table of Contents
 - [Umamusume: Pretty Derby](#umamusume-pretty-derby)
 ## Umamusume: Pretty Derby
-- v2.0.0 - Current Version (02/12/25 23:51 UTC)
+- v2.0.1 - Current Version (04/12/25 15:25 UTC)
+  - Turns out I coded it wrong, so any objectives based on options weren't appearing at all.
+  - I have fixed it.
+- v2.0.0 (02/12/25 23:51 UTC)
   - Added the following umas that I was behind on to the default trainee list:
     - Agnes Digital
     - Hishi Akebono
