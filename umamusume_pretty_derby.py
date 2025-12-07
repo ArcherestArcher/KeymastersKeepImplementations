@@ -242,7 +242,7 @@ class UmamusumePrettyDerbyGame(Game):
     def races_g1(self) -> List[str]:
         return [
             "Asahi Hai Futurity Stakes",
-            "Hansin Juvenile Fillies",
+            "Hanshin Juvenile Fillies",
             "Hopeful Stakes",
             
             "Satsuki Sho",
@@ -583,4 +583,5 @@ class UmamusumePrettyDerbyIncludeUnityCup(Toggle):
     """
     
     display_name = "Umamusume: Pretty Derby Include Unity Cup"
+
 
