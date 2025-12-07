@@ -13,7 +13,10 @@ A Suggestion Box for ways to further improve my implementations can be found [he
     - Not using tier 5 upgrades
     - Disabling all Monkey Knowledge
 ## Umamusume: Pretty Derby
-- v2.0.1 - Current Version (04/12/25 15:25 UTC)
+- v2.0.2 - Current Version (07/12/25 21:09 UTC)
+  - My boyfriend pointed out a typo, so I have fixed it.
+  - For those curious, I'd accidentally listed the Hanshin Juvenile Fillies race as Hansin instead.
+- v2.0.1 (04/12/25 15:25 UTC)
   - Turns out I coded it wrong, so any objectives based on options weren't appearing at all.
   - I have fixed it.
 - v2.0.0 (02/12/25 23:51 UTC)
