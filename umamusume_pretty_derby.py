@@ -1,3 +1,16 @@
+"""
+A Keymaster's Keep implementation of Umamusume: Pretty Derby, created by Archer (ArcherestArcher).
+Depending on YAML Options, the following objective types can be included:
+
+- Winning or getting certain placements in the Make Debut or in specific Graded Races
+- Winning the URA Finale
+- Winning or drawing against certain Unity Cup teams in the four preliminary rounds
+- Winning against Team Zenith in the final Unity Cup round
+- Winning against Little Cocon or Bitter Glasse in the URA Finale
+- Getting the Good Ending with a specific trainee in a specific scenario
+- Getting the Unique Epithet for a specific trainee
+"""
+
 from __future__ import annotations
 
 import functools
@@ -23,6 +36,13 @@ class UmamusumePrettyDerbyArchipelagoOptions:
     umamusume_pretty_derby_include_unity_cup: UmamusumePrettyDerbyIncludeUnityCup
 
 class UmamusumePrettyDerbyGame(Game):
+    """
+    Umamusume: Pretty Derby is a Sports Simulation and Raising Simulation game, where you train horsegirls known as Umamusume to win races against other Umamusume.
+
+    The multimedia series it is part of takes heavy inspiration from real life Japanese horse-racing.
+    A majority of Umamusume are named after real horses, and have careers and stories heavily inspired by their namesakes.
+    """
+    
     name = "Umamusume: Pretty Derby"
     platform = KeymastersKeepGamePlatforms.PC
 
@@ -583,5 +603,6 @@ class UmamusumePrettyDerbyIncludeUnityCup(Toggle):
     """
     
     display_name = "Umamusume: Pretty Derby Include Unity Cup"
+
 
 
