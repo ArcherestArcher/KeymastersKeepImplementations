@@ -1,3 +1,12 @@
+"""
+A Keymaster's Keep implementation of Bloons TD 6, created by Archer (ArcherestArcher).
+Depending on YAML Options, the following objective types can be included:
+
+- Completing specific difficulties on specific maps
+- Beating specific tiers of specific boss bloons on specific maps
+- Beating specific tiers of specific elite boss bloons on specific maps
+"""
+
 from __future__ import annotations
 
 import functools
@@ -27,6 +36,10 @@ class BloonsTD6ArchipelagoOptions:
     bloons_td_6_include_boss_bloon_challenges: BloonsTD6IncludeBossBloonChallenges
 
 class BloonsTD6Game(Game):
+    """
+    Bloons TD 6 is the 6th major installment of the Bloons TD series; a tower defense series where you place monkeys to pop bloons.
+    """
+    
     name = "Bloons TD 6"
     platform = KeymastersKeepGamePlatforms.PC
 
