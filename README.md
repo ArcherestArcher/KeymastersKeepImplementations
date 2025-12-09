@@ -4,7 +4,9 @@ A Suggestion Box for ways to further improve my implementations can be found [he
 - [Bloons TD 6](#bloons-td-6)
 - [Umamusume: Pretty Derby](#umamusume-pretty-derby)
 ## Bloons TD 6
-- v1.0.0 - Inital & Current Version (04/12/25 19:45 UTC)
+- v1.0.1 - Current Version (09/12/25 23:56 UTC)
+  - Added docstrings describing the implementation and game for use on the kmk codex.
+- v1.0.0 - Inital Version (04/12/25 19:45 UTC)
   - Options to include or disclude the different map groups and difficulty modes.
   - Options to include boss bloon challenges.
   - Tasks are to clear maps on different modes, or to clear certain tiers of boss bloons on specific maps.
@@ -13,7 +15,9 @@ A Suggestion Box for ways to further improve my implementations can be found [he
     - Not using tier 5 upgrades
     - Disabling all Monkey Knowledge
 ## Umamusume: Pretty Derby
-- v2.0.2 - Current Version (07/12/25 21:09 UTC)
+- v2.0.3 - Current Version (09/12/25 23:51 UTC)
+  - Added docstrings describing the implementation and game for use on the kmk codex.
+- v2.0.2 (07/12/25 21:09 UTC)
   - My boyfriend pointed out a typo, so I have fixed it.
   - For those curious, I'd accidentally listed the Hanshin Juvenile Fillies race as Hansin instead.
 - v2.0.1 (04/12/25 15:25 UTC)
