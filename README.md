@@ -4,7 +4,10 @@ A Suggestion Box for ways to further improve my implementations can be found [he
 - [Bloons TD 6](#bloons-td-6)
 - [Umamusume: Pretty Derby](#umamusume-pretty-derby)
 ## Bloons TD 6
-- v1.0.1 - Current Version (09/12/25 23:56 UTC)
+- v1.0.2 - Current Version (18/12/25 23:11 UTC)
+  - Fixed issue with maps lists that caused the implementation to throw out quite possibly the opposite issue.
+  - Seriously the error message it gave me was that it lacked the argument self, but the actual issue was HAVING the argument self where it wasn't needed.
+- v1.0.1 (09/12/25 23:56 UTC)
   - Added docstrings describing the implementation and game for use on the kmk codex.
 - v1.0.0 - Inital Version (04/12/25 19:45 UTC)
   - Options to include or disclude the different map groups and difficulty modes.
