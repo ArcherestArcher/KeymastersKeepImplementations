@@ -368,7 +368,7 @@ class BloonsTD6Game(Game):
         return bool(self.archipelago_options.bloons_td_6_include_beginner_maps.value)
 
     @staticmethod
-    def beginner_maps(self) -> List[str]:
+    def beginner_maps() -> List[str]:
         return [
             "Monkey Meadow",
             "In The Loop",
@@ -406,7 +406,7 @@ class BloonsTD6Game(Game):
         return bool(self.archipelago_options.bloons_td_6_include_intermediate_maps.value)
 
     @staticmethod
-    def intermediate_maps(self) -> List[str]:
+    def intermediate_maps() -> List[str]:
         return [
             "Lost Crevasse",
             "Luminous Cove",
@@ -442,7 +442,7 @@ class BloonsTD6Game(Game):
         return bool(self.archipelago_options.bloons_td_6_include_advanced_maps.value)
 
     @staticmethod
-    def advanced_maps(self) -> List[str]:
+    def advanced_maps() -> List[str]:
         return [
             "Sunset Gulch",
             "Enchanted Glade",
@@ -475,7 +475,7 @@ class BloonsTD6Game(Game):
         return bool(self.archipelago_options.bloons_td_6_include_expert_maps.value)
 
     @staticmethod
-    def expert_maps(self) -> List[str]:
+    def expert_maps() -> List[str]:
         return [
             "Tricky Tracks",
             "Glacial Trail",
